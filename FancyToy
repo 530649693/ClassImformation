@@ -1,0 +1,4 @@
+//益智玩具-类 继承玩具类，实现了3个接口
+public class FancyToy extends Toy implements HasBatteries,Waterproff,Shoots{
+	FancyToy() {super(1);}
+}
