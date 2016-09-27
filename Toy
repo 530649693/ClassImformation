@@ -1,0 +1,6 @@
+//玩具类
+public class Toy {
+	Toy() {}
+	Toy(int i) {}
+	
+}
