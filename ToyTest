@@ -1,0 +1,35 @@
+
+public class ToyTest {
+	static void prinfInfo(Class cc){
+		System.out.println("Class name :" + cc.getName());
+		System.out.println("is interface? :"+ cc.isInterface());
+		System.out.println("Simple name :" + cc.getSimpleName());
+		System.out.println("Cannoical name :" + cc.getCanonicalName());
+		
+	}
+	public static void main(String[] args) {
+		Class c = null;
+		try {
+			c = Class.forName("per.hyf.classImformation.FancyToy"); //FancyToy的包路径
+		} catch (ClassNotFoundException e) {
+			System.err.println("can not find FancyToy");
+			System.exit(1);
+		}
+		prinfInfo(c);
+		for(Class face : c.getInterfaces()){
+			prinfInfo(face);
+		}
+		Class up = c.getSuperclass();
+		Object Obj = null;
+		try {
+			Obj = up.newInstance();
+		} catch (InstantiationException e) {
+			System.out.println("can not instantiation");
+			System.exit(1);
+		} catch (IllegalAccessException e) {
+			System.out.println("can not access");
+			System.exit(1);
+		}
+		prinfInfo(Obj.getClass());
+	}
+}
