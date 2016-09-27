@@ -1,0 +1,6 @@
+//有电池-接口
+public interface HasBatteries {}
+//防水-接口
+interface Waterproff{}
+//射击-接口
+interface Shoots{}
